@@ -1,44 +1,70 @@
 import React, { useEffect, useState } from "react";
 import { ClayInput } from "@clayui/form";
-import ClayIcon from "@clayui/icon";
 import "./styles.css";
 const Emails = () => {
   const [emails, setEmails] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [displayEmails, setDisplayEmails] = useState([]);
 
   useEffect(() => {
     setEmails([
       {
-        subject: "Issue Related to Symantec Details",
+        id: 1,
+        subject: "Issue Related to Semantic Details",
         time: "6:01 pm",
-        sender: ["Rajendra Pandey"],
-        recipients: ["Rajneesh Kumar", "Shubham Kumar Varma"],
+        sender: "Rajendra Pandey",
+        recipients: ["Rajneesh", "Shubham"],
       },
       {
-        subject: "Issue Related to Symantec Details",
+        id: 2,
+        subject: "Issue Related to Syntax Details",
         time: "6:01 pm",
-        sender: ["Rajendra Pandey"],
-        recipients: ["Rajneesh Kumar", "Shubham Kumar Varma"],
+        sender: " Pandey",
+        recipients: ["Kumar", "Varma"],
       },
       {
-        subject: "Issue Related to Symantec Details",
+        id: 3,
+        subject: "Issue Related to Runtime Details",
         time: "6:01 pm",
-        sender: ["Rajendra Pandey"],
-        recipients: ["Rajneesh Kumar", "Shubham Kumar Varma"],
+        sender: "Aman",
+        recipients: ["Divyansh", "HashedIn"],
       },
       {
-        subject: "Issue Related to Symantec Details",
+        id: 4,
+        subject: "Issue Related to Type Details",
         time: "6:01 pm",
-        sender: ["Rajendra Pandey"],
-        recipients: ["Rajneesh Kumar", "Shubham Kumar Varma"],
+        sender: "Broadcomm",
+        recipients: ["USI", "US"],
       },
       {
-        subject: "Issue Related to Symantec Details",
+        id: 5,
+        subject: "Issue Related to Compile Details",
         time: "6:01 pm",
-        sender: ["Rajendra Pandey"],
-        recipients: ["Rajneesh Kumar", "Shubham Kumar Varma"],
+        sender: "Deloitte",
+        recipients: ["IT", "HR"],
       },
     ]);
   }, []);
+
+  useEffect(() => {
+    setDisplayEmails(emails);
+  }, [emails]);
+
+  function handleSearch(value) {
+    setSearchQuery(value);
+    if (value.trim()) {
+      const filteredEmails = emails.filter(
+        (email) =>
+          email.subject.toLowerCase().includes(value.trim().toLowerCase()) ||
+          email.sender.toLowerCase().includes(value.trim().toLowerCase()) ||
+          email.recipients.some((recipient) =>
+            recipient.toLowerCase().includes(value.trim().toLowerCase())
+          )
+      );
+      setDisplayEmails(filteredEmails);
+    }
+  }
+
   return (
     <div className="emails-container">
       <div className="search-box">
@@ -48,15 +74,19 @@ const Emails = () => {
           alt="search-icon"
         />
         <ClayInput
+          value={searchQuery}
           type="text"
           className="search-input"
           placeholder="Search by keyword or person name"
+          onChange={(e) => {
+            handleSearch(e.target.value);
+          }}
         />
       </div>
       {emails.length !== 0 &&
-        emails.map((val) => {
+        displayEmails.map((val) => {
           return (
-            <div className="email">
+            <div className="email" key={val.id}>
               <div className="email-heading">
                 <div className="email-title">
                   <img
