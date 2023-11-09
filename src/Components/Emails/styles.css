@@ -1,0 +1,73 @@
+.emails-container {
+  height: 50vh;
+  overflow-y: auto;
+}
+.email {
+  margin: 12px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(233, 236, 239, 1);
+}
+.email-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.email-title {
+  display: flex;
+  gap: 5px;
+}
+.email-icon {
+  width: 24px;
+  height: 24px;
+}
+.email-subject {
+  font-size: 500;
+  font-weight: 500;
+  color: rgba(72, 72, 72, 1);
+}
+.email-time {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(106, 113, 120, 1);
+}
+.email-sender,
+.email-recipients {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  color: rgba(106, 113, 120, 1);
+}
+
+.email-people {
+  margin-left: 1%;
+  color: rgba(72, 72, 72, 1);
+}
+
+.emails-container::-webkit-scrollbar {
+  width: 6px;
+  height: 100px;
+}
+
+.emails-container::-webkit-scrollbar-thumb {
+  background-color: rgba(206, 212, 218, 1);
+  border-radius: 5px;
+  opacity: 68.27%;
+}
+
+.emails-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1 transparent;
+}
+
+/* for search input field */
+.search-icon {
+  height: 24px;
+  width: 24px;
+}
+.search-box {
+  display: flex;
+}
+.search-input {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(206, 212, 218, 1);
+}

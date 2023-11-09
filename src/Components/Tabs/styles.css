@@ -1,0 +1,27 @@
+.custom-tab-list {
+  display: flex;
+}
+
+.custom-tab-item {
+  color: grey;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.6;
+  transition: all 0.3s;
+  border-bottom: 1px solid grey;
+}
+
+.custom-tab-item.active {
+  color: black;
+  border-bottom: 2px solid blue;
+  opacity: 1;
+}
+
+/* Tab Panels */
+.custom-tab-panel {
+  background-color: white;
+}

@@ -1,0 +1,18 @@
+/* styles.css */
+
+/* Define a CSS class */
+.header {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  height: 7%;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-text {
+  font-size: 20px;
+  color: #272b30;
+  font-weight: 500;
+}

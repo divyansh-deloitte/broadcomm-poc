@@ -1,0 +1,42 @@
+.summary-container {
+  width: 94%;
+  box-shadow: 0 4px 16px 0 rgba(51, 56, 64, 0.08);
+  border-radius: 4px;
+  padding: 16px;
+}
+.summary-heading {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(39, 43, 48, 1);
+}
+.trends-total {
+  width: 56%;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+
+  gap: 10px;
+}
+.trend-item {
+  height: 3em;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #ffffff;
+}
+.icon {
+  height: 32px;
+  width: 32px;
+}
+.value {
+  color: rgba(16, 18, 19, 1);
+  font-size: 18px;
+}
+.label {
+  color: rgba(79, 87, 94, 1);
+  font-size: 16px;
+}

@@ -1,0 +1,11 @@
+.details-container {
+  width: 94%;
+  box-shadow: 0 4px 16px 0 rgba(51, 56, 64, 0.08);
+  border-radius: 4px;
+  padding: 16px;
+}
+.details-heading {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(39, 43, 48, 1);
+}
